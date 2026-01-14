@@ -17,9 +17,11 @@ class UpdateUserRequest extends StoreUserRequest
 
         $rules['password'] = [
             'nullable',
-            'min:6',
-            'max:20',
+            'min:8',
+            'confirmed',
         ];
+
+        $rules['password_confirmation'] = 'nullable|min:8';
 
         return $rules;
     }

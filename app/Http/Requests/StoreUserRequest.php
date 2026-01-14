@@ -27,14 +27,14 @@ class StoreUserRequest extends FormRequest
             'email' => [
                 'required',
                 'email',
-                // 'unique:users,email',
                 Rule::unique('users', 'email')->ignore($this->user, 'id')
             ],
             'password' => [
                 'required',
-                'min:6',
-                'max:20',
-            ]
+                'min:8',
+                'confirmed',
+            ],
+            'password_confirmation' => 'required|min:8',
         ];
     }
 }
