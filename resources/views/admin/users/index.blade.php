@@ -31,7 +31,7 @@
                         <td class="px-6 py-4">{{ $user->email }}</td>
                         <td class="px-6 py-4">
                             <a href="{{ route('users.edit', $user->id) }}">Edit</a>
-                            <a href="">Detalhes</a>
+                            <a href="{{ route('users.show', $user->id) }}">Detalhes</a>
                         </td>
                     </tr>
                 @empty

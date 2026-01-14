@@ -16,6 +16,12 @@
     </div>
 @endif
 
+@if (session()->has('warning'))
+<div class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-400" role="alert">
+    {{ session('warning') }}
+    </div>
+@endif
+
 @if ($errors->any())
     <ul>
         @foreach ($errors->all() as $error)
